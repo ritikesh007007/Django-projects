@@ -1,6 +1,6 @@
 from django.db import models
 
-class member(models.Model): 
+class members(models.Model): 
     firstname=models.CharField(max_length=255)
     lastname=models.CharField(max_length=255)
     num=models.IntegerField(null=True)

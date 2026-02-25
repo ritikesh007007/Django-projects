@@ -1,26 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="{% static 'first.css' %}">
 <body>
-<h1>Welcome Everyone</h1>
-{% comment "this was the original welcome message" %}
-    <h1>Welcome ladies and gentlemen</h1>
-{% endcomment %}
-<ul>
-  {% for x in mymembers %}
-    <li>{{ x.firstname }}</li>
-  {% endfor %} 
-  {% if greeting == 1 %}
-  <h1>Hello</h1>
-{% else %}
-  <h1>Bye</h1>
-{% endif %}
 
-<ul>
-  {% for x in mymembers %}
-    <li>{{ x.firstname }}</li>
-  {% endfor %}
-</ul>
-</ul>
-{% include 'footer.html' with w="website" %}
+{% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %}
+
 </body>
 </html>

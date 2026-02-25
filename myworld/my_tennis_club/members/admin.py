@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import member
+from .models import members
 
  
 
@@ -7,4 +7,4 @@ from .models import member
 
 class MemberAdmin(admin.ModelAdmin):
   list_display = ("firstname", "lastname", "joining_date",)
-admin.site.register(member,MemberAdmin)
+admin.site.register(members,MemberAdmin)
