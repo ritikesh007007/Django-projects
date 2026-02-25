@@ -3,11 +3,13 @@
     {% extends 'master.html' %}
     {% block title %} detial about{{ mymember.firstname }} {{ mymember.lastname }}{% endblock %}
     {% block content %}
+    {% with a='check out baby'%}
     <body>
         <h1>{{mymember.firstname}} {{mymember.lastname}}</h1>
         <p>Member number: {{mymember.num}}</p>
         <p>Member since: {{mymember.joining_date}}</p>
-        <p> back to <a href="/members/">All members</a></p>
+        <p> back to <a href="/members/">All members,{{a}}</a></p>
     </body>
+    {% endwith %}
     {% endblock %}
 </html>

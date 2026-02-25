@@ -6,3 +6,5 @@ class member(models.Model):
     num=models.IntegerField(null=True)
     joining_date=models.DateField(null=True)
 # Create your models here.
+    def __str__(self):
+     return f"{self.firstname} {self.lastname}"
