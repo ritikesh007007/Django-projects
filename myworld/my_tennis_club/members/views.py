@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import members
 
-def members(request):
+def list_members(request):
   mymembers = members.objects.all().values()
   template = loader.get_template('all_members.html')
   context = {
@@ -11,7 +11,7 @@ def members(request):
   return HttpResponse(template.render(context, request))
 
 def details(request, id):
-  mymember = member.objects.get(id=id)
+  mymember = members.objects.get(id=id)
   template = loader.get_template('detail.html')
   context = {
     'mymember': mymember,
@@ -25,6 +25,6 @@ def main(request):
 def testing(request):
   template = loader.get_template('template.html')
   context = {
-    'mymembers': members   
+    'mymembers': members.objects.all().values()
   }
   return HttpResponse(template.render(context, request))
